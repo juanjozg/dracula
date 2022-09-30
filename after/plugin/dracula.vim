@@ -81,7 +81,7 @@ if exists('g:loaded_nvim_treesitter')
   hi! link TSFuncMacro Function
   hi! link TSParameter DraculaOrangeItalic
   hi! link TSParameterReference DraculaOrange
-  hi! link TSField DraculaOrange
+  hi! link TSField DraculaFg
   hi! link TSConstructor DraculaCyan
   " # Keywords
   hi! link TSLabel DraculaPurpleItalic
@@ -91,7 +91,7 @@ if exists('g:loaded_nvim_treesitter')
   hi! link TSStrong DraculaFgBold
   hi! link TSEmphasis DraculaFg
   hi! link TSUnderline Underlined
-  hi! link TSTitle DraculaYellow
+  hi! link TSTitle DraculaFg
   hi! link TSLiteral DraculaYellow
   hi! link TSURI DraculaYellow
   " HTML and JSX tag attributes. By default, this group is linked to TSProperty,
