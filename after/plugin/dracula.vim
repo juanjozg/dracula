@@ -68,35 +68,70 @@ endif
 " specification.
 " https://github.com/nvim-treesitter/nvim-treesitter/blob/master/plugin/nvim-treesitter.vim
 if exists('g:loaded_nvim_treesitter')
-  " # Misc
-  hi! link TSPunctSpecial Special
-  " # Constants
-  hi! link TSConstMacro Macro
-  hi! link TSStringEscape Character
-  hi! link TSSymbol DraculaPurple
   hi! link TSAnnotation DraculaYellow
   hi! link TSAttribute DraculaGreenItalic
-  " # Functions
+  hi! link TSBoolean DraculaPurpleBold
+  hi! link TSCharacter DraculaGreen
+  hi! link TSConditional DraculaPinkBoldItalic
+  hi! link TSConstant DraculaPurpleBold
+  hi! link TSConstBuiltin DraculaPurple
+  hi! link TSConstMacro Macro
+  hi! link TSConstructor DraculaCyan
+  hi! link TSEmphasis DraculaFg
+  hi! link TSError DraculaError
+  hi! link TSException DraculaPurple
+  hi! link TSField DraculaFg
+  hi! link TSFloat DraculaOrange
   hi! link TSFuncBuiltin DraculaCyan
   hi! link TSFuncMacro Function
+  hi! link TSFunction DraculaGreenBold
+  hi! link TSInclude DraculaPinkBold
+  hi! link TSKeyword DraculaPinkBold
+  hi! link TSKeywordFunction DraculaPinkBoldItalic
+  hi! link TSKeywordOperator DraculaPinkBold
+  hi! link TSLabel DraculaPurpleItalic
+  hi! link TSLiteral DraculaYellow
+  hi! link TSMethod DraculaGreenBold
+  hi! link TSNamespace DraculaFg
+  hi! link TSNumber DraculaPurple
+  hi! link TSOperator DraculaPink
+  hi! link TSOperator DraculaPink
+  hi! link TSVariable DraculaFg
+  hi! link TSVariableBuiltin DraculaPurpleItalic
   hi! link TSParameter DraculaOrangeItalic
   hi! link TSParameterReference DraculaOrange
-  hi! link TSField DraculaFg
-  hi! link TSConstructor DraculaCyan
-  " # Keywords
-  hi! link TSLabel DraculaPurpleItalic
-  " # Variable
-  hi! link TSVariableBuiltin DraculaPurpleItalic
-  " # Text
+  hi! link TSProperty DraculaFg
+  hi! link TSPunctBracket DraculaPink
+  hi! link TSPunctDelimiter DraculaPink
+  hi! link TSPunctSpecial DraculaPink
+  hi! link TSRepeat DraculaPinkBoldItalic
+  hi! link TSString Character
+  hi! link TSStringEscap Character
+  hi! link TSStringEscape Character
+  hi! link TSStringRegex Character
   hi! link TSStrong DraculaFgBold
-  hi! link TSEmphasis DraculaFg
-  hi! link TSUnderline Underlined
+  hi! link TSStructure DraculaPurple
+  hi! link TSSymbol DraculaPurple
+  hi! link TSTag DraculaPink
+  hi! link TSTagDelimiter DraculaFg
+  hi! link TSText DraculaFg
   hi! link TSTitle DraculaFg
-  hi! link TSLiteral DraculaYellow
+  hi! link TSType DraculaCyanBoldItalic
+  hi! link TSTypeBuiltin DraculaCyanBoldItalic
   hi! link TSURI DraculaYellow
+  hi! link TSUnderline Underlined
+  hi! link TSVariableBuiltin DraculaPurpleItalic
   " HTML and JSX tag attributes. By default, this group is linked to TSProperty,
   " which in turn links to Identifer (white).
   hi! link TSTagAttribute DraculaGreenItalic
+  " Rainbow
+  hi! link rainbowcol1 DraculaPinkbold
+  hi! link rainbowcol2 DraculaCyanBold
+  hi! link rainbowcol3 DraculaPurpleBold
+  hi! link rainbowcol4 DraculaGreenBold
+  hi! link rainbowcol5 DraculaYellowBold
+  hi! link rainbowcol6 DraculaPinkBold
+  hi! link rainbowcol7 DraculaCyanBold
 endif
 " }}}
 " nvim-cmp: {{{

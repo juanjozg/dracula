@@ -142,6 +142,7 @@ endfunction
 "}}}2
 " Dracula Highlight Groups: {{{2
 
+call s:h('DraculaBg', s:none, s:bg)
 call s:h('DraculaBgLight', s:none, s:bglight)
 call s:h('DraculaBgLighter', s:none, s:bglighter)
 call s:h('DraculaBgDark', s:none, s:bgdark)
@@ -153,13 +154,16 @@ call s:h('DraculaFgBold', s:fg, s:none, [s:attrs.bold])
 
 call s:h('DraculaComment', s:comment)
 call s:h('DraculaCommentBold', s:comment, s:none, [s:attrs.bold])
+call s:h('DraculaCommentItalic', s:comment, s:none, [s:attrs.italic])
 
 call s:h('DraculaSelection', s:none, s:selection)
 
 call s:h('DraculaSubtle', s:subtle)
 
 call s:h('DraculaCyan', s:cyan)
+call s:h('DraculaCyanBold', s:cyan, s:none, [s:attrs.bold])
 call s:h('DraculaCyanItalic', s:cyan, s:none, [s:attrs.italic])
+call s:h('DraculaCyanBoldItalic', s:cyan, s:none, [s:attrs.bold, s:attrs.italic])
 
 call s:h('DraculaGreen', s:green)
 call s:h('DraculaGreenBold', s:green, s:none, [s:attrs.bold])
@@ -173,33 +177,40 @@ call s:h('DraculaOrangeBoldItalic', s:orange, s:none, [s:attrs.bold, s:attrs.ita
 call s:h('DraculaOrangeInverse', s:bg, s:orange)
 
 call s:h('DraculaPink', s:pink)
+call s:h('DraculaPinkBold', s:pink, s:none, [s:attrs.bold])
 call s:h('DraculaPinkItalic', s:pink, s:none, [s:attrs.italic])
+call s:h('DraculaPinkBoldItalic', s:pink, s:none, [s:attrs.bold, s:attrs.italic])
 
 call s:h('DraculaPurple', s:purple)
+call s:h('DraculaPurpleSelection', s:purple, s:selection)
 call s:h('DraculaPurpleBold', s:purple, s:none, [s:attrs.bold])
 call s:h('DraculaPurpleItalic', s:purple, s:none, [s:attrs.italic])
+call s:h('DraculaPurpleBoldItalic', s:purple, s:none, [s:attrs.bold, s:attrs.italic])
 
 call s:h('DraculaRed', s:red)
 call s:h('DraculaRedInverse', s:fg, s:red)
 
 call s:h('DraculaYellow', s:yellow)
+call s:h('DraculaYellowInverse', s:bg, s:yellow)
 call s:h('DraculaYellowItalic', s:yellow, s:none, [s:attrs.italic])
 
 call s:h('DraculaError', s:red, s:none, [], s:red)
 
 call s:h('DraculaErrorLine', s:none, s:none, [s:attrs.undercurl], s:red)
-call s:h('DraculaWarnLine', s:none, s:none, [s:attrs.undercurl], s:orange)
-call s:h('DraculaInfoLine', s:none, s:none, [s:attrs.undercurl], s:cyan)
+call s:h('DraculaWarnLine', s:none, s:none, [s:attrs.undercurl], s:yellow)
+call s:h('DraculaInfoLine', s:none, s:none, [s:attrs.undercurl], s:green)
 
-call s:h('DraculaTodo', s:cyan, s:none, [s:attrs.bold, s:attrs.inverse])
-call s:h('DraculaSearch', s:green, s:none, [s:attrs.inverse])
+call s:h('DraculaTodo', s:purple, s:none, [s:attrs.bold, s:attrs.italic])
+call s:h('DraculaSearch', s:yellow, s:comment, [s:attrs.inverse])
+call s:h('DraculaFoldColumn', s:comment)
+call s:h('DraculaFolded', s:green, s:bgdarker, [s:attrs.italic])
 call s:h('DraculaBoundary', s:comment, s:bgdark)
 call s:h('DraculaWinSeparator', s:comment, s:bgdark)
 call s:h('DraculaLink', s:cyan, s:none, [s:attrs.underline])
 
-call s:h('DraculaDiffChange', s:orange, s:none)
-call s:h('DraculaDiffText', s:bg, s:orange)
-call s:h('DraculaDiffDelete', s:red, s:bgdark)
+call s:h('DraculaDiffChange', s:yellow, s:none)
+call s:h('DraculaDiffText', s:comment, s:yellow)
+call s:h('DraculaDiffDelete', s:red, s:red)
 
 " }}}2
 
@@ -215,54 +226,70 @@ call s:h('StatusLineNC', s:none, s:bglight)
 call s:h('StatusLineTerm', s:none, s:bglighter, [s:attrs.bold])
 call s:h('StatusLineTermNC', s:none, s:bglight)
 call s:h('WildMenu', s:bg, s:purple, [s:attrs.bold])
-call s:h('CursorLine', s:none, s:subtle)
+call s:h('CursorLine', s:none, s:bgdark)
 
 hi! link ColorColumn  DraculaBgDark
 hi! link CursorColumn CursorLine
-hi! link CursorLineNr DraculaYellow
+hi! link CursorLineNr DraculaPurpleBold
 hi! link DiffAdd      DraculaGreen
 hi! link DiffAdded    DiffAdd
 hi! link DiffChange   DraculaDiffChange
 hi! link DiffDelete   DraculaDiffDelete
 hi! link DiffRemoved  DiffDelete
 hi! link DiffText     DraculaDiffText
-hi! link Directory    DraculaPurpleBold
+hi! link Directory    DraculaCyan
 hi! link ErrorMsg     DraculaRedInverse
-hi! link FoldColumn   DraculaSubtle
-hi! link Folded       DraculaBoundary
-hi! link IncSearch    DraculaOrangeInverse
+hi! link FoldColumn   DraculaFoldColumn
+hi! link Folded       DraculaFolded
+hi! link IncSearch    DraculaYellowInverse
 call s:h('LineNr', s:comment)
-hi! link MoreMsg      DraculaFgBold
+hi! link MoreMsg      DraculaGreen
 hi! link NonText      DraculaSubtle
 hi! link Pmenu        DraculaBgDark
 hi! link PmenuSbar    DraculaBgDark
-hi! link PmenuSel     DraculaSelection
+hi! link PmenuSel     DraculaPurpleSelection
 hi! link PmenuThumb   DraculaSelection
-hi! link Question     DraculaFgBold
+hi! link Question     DraculaPurple
 hi! link Search       DraculaSearch
-call s:h('SignColumn', s:comment)
-hi! link TabLine      DraculaBoundary
-hi! link TabLineFill  DraculaBgDark
+call s:h('SignColumn', s:none)
+hi! link TabLine      DraculaComment
+hi! link TabLineFill  DraculaBg
 hi! link TabLineSel   Normal
-hi! link Title        DraculaGreenBold
+hi! link Title        DraculaFgBold
 hi! link VertSplit    DraculaWinSeparator
 hi! link Visual       DraculaSelection
 hi! link VisualNOS    Visual
-hi! link WarningMsg   DraculaOrangeInverse
+hi! link WarningMsg   DraculaYellow
 
 " }}}
 " Syntax: {{{
 
 " Required as some plugins will overwrite
-call s:h('MatchParen', s:green, s:none, [s:attrs.underline])
-call s:h('Conceal', s:cyan, s:none)
+call s:h('MatchParen', s:fg, s:none, [s:attrs.underline])
+call s:h('Conceal', s:comment, s:none)
 
 " Neovim uses SpecialKey for escape characters only. Vim uses it for that, plus whitespace.
 if has('nvim')
-  hi! link SpecialKey DraculaRed
+  hi! link SpecialKey DraculaComment
   hi! link LspReferenceText DraculaSelection
   hi! link LspReferenceRead DraculaSelection
   hi! link LspReferenceWrite DraculaSelection
+  hi! link DiagnosticInfo DraculaCyan
+  hi! link DiagnosticHint DraculaCyan
+  hi! link DiagnosticError DraculaError
+  hi! link DiagnosticWarn DraculaYellow
+  hi! link DiagnosticSignInfo DraculaCyan
+  hi! link DiagnosticSignHint DraculaCyan
+  hi! link DiagnosticSignError DraculaError
+  hi! link DiagnosticSignWarn DraculaYellow
+  hi! link DiagnosticFloatingInfo DraculaCyan
+  hi! link DiagnosticFloatingHint DraculaCyan
+  hi! link DiagnosticFloatingError DraculaError
+  hi! link DiagnosticFloatingWarn DraculaYellow
+  hi! link DiagnosticUnderlineError DraculaErrorLine
+  hi! link DiagnosticUnderlineHint DraculaInfoLine
+  hi! link DiagnosticUnderlineInfo DraculaInfoLine
+  hi! link DiagnosticUnderlineWarn DraculaWarnLine
   " Link old 'LspDiagnosticsDefault*' hl groups
   " for backward compatibility with neovim v0.5.x
   hi! link LspDiagnosticsDefaultInformation DiagnosticInfo
@@ -273,15 +300,6 @@ if has('nvim')
   hi! link LspDiagnosticsUnderlineHint DiagnosticUnderlineHint
   hi! link LspDiagnosticsUnderlineInformation DiagnosticUnderlineInfo
   hi! link LspDiagnosticsUnderlineWarning DiagnosticUnderlineWarn
-
-  hi! link DiagnosticInfo DraculaCyan
-  hi! link DiagnosticHint DraculaCyan
-  hi! link DiagnosticError DraculaError
-  hi! link DiagnosticWarn DraculaOrange
-  hi! link DiagnosticUnderlineError DraculaErrorLine
-  hi! link DiagnosticUnderlineHint DraculaInfoLine
-  hi! link DiagnosticUnderlineInfo DraculaInfoLine
-  hi! link DiagnosticUnderlineWarn DraculaWarnLine
 
   hi! link WinSeparator DraculaWinSeparator
 else
@@ -296,42 +314,43 @@ hi! link Error DraculaError
 hi! link SpellBad DraculaErrorLine
 hi! link SpellLocal DraculaWarnLine
 hi! link SpellCap DraculaInfoLine
-hi! link SpellRare DraculaInfoLine
+hi! link SpellRare DraculaYellow
 
 hi! link Constant DraculaPurple
 hi! link String DraculaYellow
-hi! link Character DraculaPink
+hi! link Character DraculaYelloPurpleBold
 hi! link Number Constant
 hi! link Boolean Constant
 hi! link Float Constant
 
-hi! link Identifier DraculaFg
-hi! link Function DraculaGreen
+hi! link Identifier DraculaCyan
+hi! link Function DraculaGreenBold
 
-hi! link Statement DraculaPink
-hi! link Conditional DraculaPink
-hi! link Repeat DraculaPink
-hi! link Label DraculaPink
-hi! link Operator DraculaPink
-hi! link Keyword DraculaPink
-hi! link Exception DraculaPink
+hi! link Statement DraculaPurple
+hi! link Conditional DraculaPinkBoldItalic
+hi! link Repeat DraculaPinkBoldItalic
+hi! link Label DraculaCyan
+hi! link Operator DraculaPurple
+hi! link Keyword DraculaPinkBold
+hi! link Keywords DraculaPinkBold
+hi! link Exception DraculaPurple
 
-hi! link PreProc DraculaPink
-hi! link Include DraculaPink
-hi! link Define DraculaPink
-hi! link Macro DraculaPink
-hi! link PreCondit DraculaPink
+hi! link PreProc DraculaYellow
+hi! link Include DraculaPurpleBoldItalic
+hi! link Define DraculaPurple
+hi! link Macro DraculaCyan
+hi! link PreCondit DraculaCyan
 hi! link StorageClass DraculaPink
-hi! link Structure DraculaPink
-hi! link Typedef DraculaPink
+hi! link Structure DraculaYellow
+hi! link Typedef DraculaGreen
 
 hi! link Type DraculaCyanItalic
 
-hi! link Delimiter DraculaFg
+hi! link Delimiter DraculaPink
 
-hi! link Special DraculaPink
-hi! link SpecialComment DraculaCyanItalic
-hi! link Tag DraculaCyan
+hi! link Special DraculaGreenItalic
+hi! link SpecialComment DraculaCommentItalic
+hi! link Tag DraculaFg
 hi! link helpHyperTextJump DraculaLink
 hi! link helpCommand DraculaPurple
 hi! link helpExample DraculaGreen
