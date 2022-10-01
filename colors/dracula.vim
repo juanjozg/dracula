@@ -318,7 +318,7 @@ hi! link SpellRare DraculaYellow
 
 hi! link Constant DraculaPurple
 hi! link String DraculaYellow
-hi! link Character DraculaYellowPurpleBold
+hi! link Character DraculaYellowBold
 hi! link Number Constant
 hi! link Boolean Constant
 hi! link Float Constant
